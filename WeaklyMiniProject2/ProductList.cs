@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace WeaklyMiniProject2
 {
+    /* THis class is unnecessary. It would be easier to just use List<Product>. I created it just to practice 
+     * extending the IEnumerable-interface (hence one can call Linq-methods and foreach-loop on the ProductList-class*/
+
     public class ProductList: IEnumerable<Product>
     {
         public ProductList() {
@@ -34,13 +37,6 @@ namespace WeaklyMiniProject2
             LastIndex++;
         }
 
-        /*
-        public IEnumerator<Product> GetEnumerator()
-        {
-            //  return _elements.Where(p => p != null).GetEnumerator();
-            return ((IEnumerable<Product>)_elements[0..LastIndex]).GetEnumerator();
-          //  return ((IEnumerable<Product>)_elements.Where(p => p != null)).GetEnumerator();
-        }*/
 
         /*Since _elements is a preallocated array, some elements may be null. _elements[0..LastIndex] returns sub-array
          * with non-null elements. We cast it to (IEnumerable<Product>) and then call the GetEnumerator()-methdo*/

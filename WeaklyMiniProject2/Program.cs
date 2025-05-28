@@ -4,31 +4,8 @@ using System.Runtime.InteropServices.Marshalling;
 using WeaklyMiniProject2;
 
 
-//List<Product> products = new List<Product>();
 ProductList products = new ProductList();
 
-/*
-while (true)
-{
-Console.WriteLine("Add new product? y/n");
-string newProduct = Console.ReadLine();
-if (newProduct.Trim().ToLower() == "y")
-{
-    Console.WriteLine("Enter the name of the product:");
-    string name = Console.ReadLine();
-    Console.WriteLine("Enter the category:");
-    string category = Console.ReadLine();
-    Console.WriteLine("Enter the price in SEK:");
-    string pricestring = Console.ReadLine();
-    float price = float.Parse(pricestring);
-
-    Product product = new Product(name, category, price);
-    products.Add(product);
-} else if (newProduct.Trim().ToLower() == "q") {
-    break;
-}
-
-}*/
 
 start:
 do
@@ -52,11 +29,6 @@ do
 
 } while (true);
 
-/*
-for(int i = 0; i < products.LastIndex; i++)
-{
-    Console.WriteLine(products._elements[i].ToString());
-}*/
 
 
 foreach (Product product in products.OrderBy(x=>x.Price)) {
